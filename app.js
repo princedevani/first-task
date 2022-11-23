@@ -3,7 +3,7 @@ const jwt = require('jsonwebtoken');
 const auth = require("./middleware/auth");
 const User = require("./model/user");
 require('dotenv').config();
-require("./config/database").connect();
+require("./database").connect();
 
 const express = require('express');
 const { ConnectionStates } = require("mongoose");
