@@ -106,10 +106,10 @@ app.post("/login", async(req, res) => {
       }
       const user = await User.findOne({ email });
 
-      console.log("user..",user)
-      console.log("...", bcrypt.compare(password, user.password))
-      console.log(",,,,,",password)
-      console.log("/////",user.password)
+      // console.log("user..",user)
+      // console.log("...", bcrypt.compare(password, user.password))
+      // console.log(",,,,,",password)
+      // console.log("/////",user.password)
 
 
       if ((user) && ( bcrypt.compare(password, user.password))) {
