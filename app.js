@@ -97,7 +97,7 @@ app.post("/register", async (req, res) => {
 
 
 
-app.post("/login", async (req, res) => {
+app.post("/login", async(req, res) => {
    try {
       const { email, password } = req.body;
 
@@ -106,7 +106,13 @@ app.post("/login", async (req, res) => {
       }
       const user = await User.findOne({ email });
 
-      if (user && (await bcrypt.compare(password, user.password))) {
+      console.log("user..",user)
+      console.log("...", bcrypt.compare(password, user.password))
+      console.log(",,,,,",password)
+      console.log("/////",user.password)
+
+
+      if ((user) && ( bcrypt.compare(password, user.password))) {
 
          // const token = jwt.sign({_id: user._id, email },
          //    'jwtproject',
@@ -125,6 +131,12 @@ app.post("/login", async (req, res) => {
    }
 
 })
+
+   
+   
+   
+   
+
 app.get('/getuser', auth, async (req, res) => {
    try {
       //  const user = await User.findByCredentials(req.body.email, req.body.password)
