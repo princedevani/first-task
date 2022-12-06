@@ -1,10 +1,14 @@
+const path = require('path')
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const auth = require("./middleware/auth");
 const validator = require("validator")
 const User = require("./model/user");
+
 require('dotenv').config();
 require("./database").connect();
+
+
 
 const accountSid = process.env.TWILIO_ACCOUNT_SID;
 const authToken = process.env.TWILIO_AUTH_TOKEN;
@@ -13,6 +17,8 @@ const client = require('twilio')(accountSid, authToken);
 const express = require('express');
 const { ConnectionStates } = require("mongoose");
 
+const htmlfilepath = path.join(__dirname,'./index.html')
+app.use(express.static(htmlfilepath))
 
 const app = express();
 
