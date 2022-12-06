@@ -21,7 +21,9 @@ const app = express();
 
 app.use(express.json());
 
-
+app.get("/", (req,res)=>{
+   res.send('Mzadey Backend')
+})
 
 app.post("/register", async (req, res) => {
    try {
