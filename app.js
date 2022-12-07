@@ -4,7 +4,7 @@ const jwt = require('jsonwebtoken');
 
 
 
-const userRouter = require('./routers/user')
+const userRouter = require('./router/user')
 
 
 require("./database").connect();

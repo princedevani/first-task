@@ -2,10 +2,11 @@ const express = require('express')
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const auth = require("../middleware/auth");
+const path = require("path")
 const validator = require("validator");
 const User = require("../model/user");
 const router = new express.Router()
-
+const htmlfilepath = path.join(__dirname, '../index.html')
 
 
 const accountSid = process.env.TWILIO_ACCOUNT_SID;
@@ -16,7 +17,7 @@ const client = require('twilio')(accountSid, authToken);
 
 
 router.get("/", (req, res) => {
-    res.send('first task')
+   res.sendFile(htmlfilepath);
  })
  
  router.post("/register", async (req, res) => {
