@@ -1,7 +1,8 @@
 const http = require("http");
 const app = require("./app");
-const User = require("./model/user");
+// const User = require("./model/user");
 const server = http.createServer(app);
+
 
 
 const { API_PORT } = process.env;
