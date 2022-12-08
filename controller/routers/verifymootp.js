@@ -1,3 +1,6 @@
+const accountSid = process.env.TWILIO_ACCOUNT_SID;
+const authToken = process.env.TWILIO_AUTH_TOKEN;
+const client = require('twilio')(accountSid, authToken);
 exports.verifymootp = async(req,res) => {
     try {
         const otpverify = await client.verify.v2.services("VAf038d03215d7bf3bf4bc5a6aea75562a")
