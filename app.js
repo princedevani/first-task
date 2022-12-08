@@ -23,8 +23,8 @@ const express = require('express');
 
 const app = express();
 
-const htmlfilepath = path.join(__dirname, './index.html')
-app.use(express.static(htmlfilepath))
+// const htmlfilepath = path.join(__dirname, './index.html')
+// app.use(express.static(htmlfilepath))
 
 
 app.use(express.json());
